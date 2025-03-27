@@ -1,4 +1,4 @@
-package com.example.currentWeather.service.Client;
+package com.app.weather.service.Client;
 
 public class NullClient implements ClientInterface {
     @Override

@@ -1,6 +1,6 @@
-package com.example.currentWeather.service.Client;
+package com.app.weather.service.Client;
 
-import com.example.currentWeather.model.Main;
+import com.app.weather.model.Main;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestClient;
 
@@ -25,8 +25,8 @@ public class OpenWeather implements ClientInterface {
         String apiUri = String.format("%s?appid=%s&q=%s", this.baseUrl, this.apiKey, cityName);
 
         try {
-            ResponseEntity<com.example.currentWeather.model.OpenWeather> responseEntity = this.restClient.get().uri(apiUri).retrieve().toEntity(com.example.currentWeather.model.OpenWeather.class);
-            com.example.currentWeather.model.OpenWeather response = responseEntity.getBody();
+            ResponseEntity<com.app.weather.model.OpenWeather> responseEntity = this.restClient.get().uri(apiUri).retrieve().toEntity(com.app.weather.model.OpenWeather.class);
+            com.app.weather.model.OpenWeather response = responseEntity.getBody();
 
             assert response != null;
 

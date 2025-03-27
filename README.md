@@ -13,4 +13,4 @@ openweather:
   baseUrl: 'http://api.openweathermap.org/data/2.5/weather'
 
 ```
-* do a `mvn install`
+* deploy and run `./mvnw spring-boot:run`

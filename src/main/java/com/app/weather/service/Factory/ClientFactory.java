@@ -1,8 +1,8 @@
-package com.example.currentWeather.service.Factory;
+package com.app.weather.service.Factory;
 
-import com.example.currentWeather.service.Client.ClientInterface;
-import com.example.currentWeather.service.Client.NullClient;
-import com.example.currentWeather.service.Client.OpenWeather;
+import com.app.weather.service.Client.ClientInterface;
+import com.app.weather.service.Client.NullClient;
+import com.app.weather.service.Client.OpenWeather;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

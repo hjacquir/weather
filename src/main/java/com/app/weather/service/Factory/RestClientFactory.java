@@ -1,4 +1,4 @@
-package com.example.currentWeather.service.Factory;
+package com.app.weather.service.Factory;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;

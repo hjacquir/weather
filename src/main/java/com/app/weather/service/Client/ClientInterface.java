@@ -1,4 +1,4 @@
-package com.example.currentWeather.service.Client;
+package com.app.weather.service.Client;
 
 public interface ClientInterface {
     public void request();
