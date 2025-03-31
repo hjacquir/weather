@@ -5,6 +5,16 @@
     <title>Home</title>
 </head>
 <body>
-Welcome
+<form action="#" th:action="@{/}" method="post">
+    <label class="col-sm-2 control-label">City name </label>
+    <input class="form-control" name="cityName" />
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+        </div>
+    </div>
+</form>
 </body>
 </html>

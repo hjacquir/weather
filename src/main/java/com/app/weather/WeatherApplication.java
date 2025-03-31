@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Scanner;
+
 @SpringBootApplication
 public class WeatherApplication implements CommandLineRunner {
 	private final ClientFactory clientFactory;
@@ -18,11 +20,14 @@ public class WeatherApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
-		try {
-			clientFactory.create().request();
-		} catch (Exception e) {
-			System.out.println("An error occurred : " + e.getMessage());
-		}
+	public void run(String... args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter the city name : ");
+
+		String cityName = scanner.next();
+
+		String response = clientFactory.create().request(cityName);
+
+		System.out.println(response);
 	}
 }

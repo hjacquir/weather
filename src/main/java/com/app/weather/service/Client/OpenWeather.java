@@ -17,11 +17,7 @@ public class OpenWeather implements ClientInterface {
         this.baseUrl = baseUrl;
     }
 
-    public void request() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the city name : ");
-
-        String cityName = scanner.next();
+    public String request(String cityName) {
         String apiUri = String.format("%s?appid=%s&q=%s", this.baseUrl, this.apiKey, cityName);
 
         try {
@@ -32,9 +28,9 @@ public class OpenWeather implements ClientInterface {
 
             Main main = response.getMain();
 
-            System.out.printf("Current Location : %s, Temp : %s, Humidity : %s, Wind speed : %s%n", response.getName(), main.getTemp(), main.getHumidity(), response.getWind().getSpeed());
+            return String.format("Current Location : %s, Temp : %s, Humidity : %s, Wind speed : %s%n", response.getName(), main.getTemp(), main.getHumidity(), response.getWind().getSpeed());
         } catch (Exception e) {
-            System.out.println("An error occurred : " + e.getMessage());
+            return "An error occurred : " + e.getMessage();
         }
     }
 }

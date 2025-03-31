@@ -1,5 +1,5 @@
 package com.app.weather.service.Client;
 
 public interface ClientInterface {
-    public void request();
+    public String request(String cityName);
 }
