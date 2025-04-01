@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @Component
 public class HomeForm {
-    @Size(min=3, message = "Enter at least 4 characters")
+    @Size(min=4, message = "Enter at least 4 characters")
     @NotEmpty(message = "City name is required")
     private String cityName;
 }
