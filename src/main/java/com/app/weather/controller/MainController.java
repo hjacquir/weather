@@ -1,6 +1,7 @@
 package com.app.weather.controller;
 
 import com.app.weather.form.HomeForm;
+import com.app.weather.model.WheatherInterface;
 import com.app.weather.service.Client.ClientInterface;
 import com.app.weather.service.Factory.ClientFactory;
 import jakarta.validation.Valid;
@@ -42,9 +43,12 @@ public class MainController {
         }
 
         ClientInterface client = this.clientFactory.create();
-        String response = client.request(homeForm.getCityName());
-
-        model.addAttribute("response", response);
+        try {
+            WheatherInterface response = client.request(homeForm.getCityName());
+            model.addAttribute("response", response.__toString());
+        } catch (Exception e) {
+            model.addAttribute("response", "Something went wrong : " + e.getMessage());
+        }
 
         return "result";
     }

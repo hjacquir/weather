@@ -1,5 +1,7 @@
 package com.app.weather.service.Client;
 
+import com.app.weather.model.WheatherInterface;
+
 public interface ClientInterface {
-    public String request(String cityName);
+    public WheatherInterface request(String cityName) throws Exception;
 }

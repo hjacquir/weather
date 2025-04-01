@@ -1,5 +1,6 @@
 package com.app.weather;
 
+import com.app.weather.model.WheatherInterface;
 import com.app.weather.service.Factory.ClientFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,8 +27,12 @@ public class WeatherApplication implements CommandLineRunner {
 
 		String cityName = scanner.next();
 
-		String response = clientFactory.create().request(cityName);
+        try {
+			WheatherInterface response = clientFactory.create().request(cityName);
 
-		System.out.println(response);
+			System.out.println(response);
+        } catch (Exception e) {
+			System.out.println("Something went wrong : " + e.getMessage());
+        }
 	}
 }
