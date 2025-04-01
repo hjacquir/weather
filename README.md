@@ -14,3 +14,4 @@ openweather:
 
 ```
 * deploy and run `./mvnw spring-boot:run`
+* go to : http://localhost:8080/
