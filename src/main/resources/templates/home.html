@@ -5,9 +5,14 @@
     <title>Home</title>
 </head>
 <body>
-<form action="#" th:action="@{/}" method="post">
+<form th:object="${HomeForm}" th:action="@{/}" method="post">
     <label class="col-sm-2 control-label">City name </label>
-    <input class="form-control" name="cityName" />
+    <input name="cityName" type="text" th:field="*{cityName}"/>
+    <div>
+        <ul>
+            <li th:each="err : ${errors}" th:text="${err.getDefaultMessage()}"/>
+        </ul>
+    </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary">
