@@ -15,3 +15,13 @@ openweather:
 ```
 * deploy and run `./mvnw spring-boot:run`
 * go to : http://localhost:8080/
+* API : 
+  * method : GET
+  * endpoint : localhost:8080/api/weather
+  * body parameter as json : 
+```json
+{
+    "cityName" : "Paris"
+}
+```
+  * response : Current Location : Paris, Temp : 288.62, Humidity : 38, Wind speed : 10.29
